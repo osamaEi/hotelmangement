@@ -39,4 +39,12 @@ Route::get('/admin/dashboard',[AdminController::class,'AdminDashboard'])->name('
 
 Route::get('/admin/logout',[AdminController::class,'AdminLogout'])->name('admin.logout');
 
+
+
 });
+
+
+
+Route::get('/admin/login',[AdminController::class,'AdminLogin'])->name('admin.login');
+
+
