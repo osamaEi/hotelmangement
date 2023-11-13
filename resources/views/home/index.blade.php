@@ -10,29 +10,29 @@
         <!-- Animate Min CSS -->
         <link rel="stylesheet" href="{{asset('front/assets/css/animate.min.css')}}">
         <!-- Flaticon CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/fonts/flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/fonts/flaticon.csss')}}">
         <!-- Boxicons CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/css/boxicons.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/boxicons.min.csss')}}">
         <!-- Magnific Popup CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/css/magnific-popup.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/magnific-popup.csss')}}">
         <!-- Owl Carousel Min CSS --> 
-        <link rel="stylesheet" href="{{asset('front/assets/css/owl.carousel.min.css')}}">
-        <link rel="stylesheet" href="{{asset('front/assets/css/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/owl.carousel.min.csss')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/owl.theme.default.min.csss')}}">
         <!-- Nice Select Min CSS --> 
-        <link rel="stylesheet" href="{{asset('front/assets/css/nice-select.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/nice-select.min.csss')}}">
         <!-- Meanmenu CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/css/meanmenu.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/meanmenu.csss')}}">
         <!-- Jquery Ui CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/css/jquery-ui.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/jquery-ui.csss')}}">
         <!-- Style CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/style.csss')}}">
         <!-- Responsive CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/css/responsive.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/responsive.csss')}}">
         <!-- Theme Dark CSS -->
-        <link rel="stylesheet" href="{{asset('front/assets/css/theme-dark.css')}}">
+        <link rel="stylesheet" href="{{asset('front/assets/css/theme-dark.csss')}}">
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{asset('front/assets/img/favicon.png')}}">
+        <link rel="icon" type="image/png" href="{{asset('front/assets/img/favicon.pngs')}}">
 
         <title>Atoli - Hotel & Resorts HTML Template</title>
     </head>
@@ -97,8 +97,8 @@
             <!-- Menu For Mobile Device -->
             <div class="mobile-nav">
                 <a href="index.html" class="logo">
-                    <img src="{{asset('front/assets/img/logos/logo-1.png')}}" class="logo-one" alt="Logo">
-                    <img src="{{asset('front/assets/img/logos/footer-logo1.png')}}" class="logo-two" alt="Logo">
+                    <img src="{{asset('front/assets/img/logos/logo-1.pngs')}}" class="logo-one" alt="Logo">
+                    <img src="{{asset('front/assets/img/logos/footer-logo1.pngs')}}" class="logo-two" alt="Logo">
                 </a>
             </div>
 
@@ -107,8 +107,8 @@
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light ">
                         <a class="navbar-brand" href="index.html">
-                            <img src="{{asset('front/assets/img/logos/logo-1.png')}}" class="logo-one" alt="Logo">
-                            <img src="{{asset('front/assets/img/logos/footer-logo1.png')}}" class="logo-two" alt="Logo">
+                            <img src="{{asset('front/assets/img/logos/logo-1.pngs')}}" class="logo-one" alt="Logo">
+                            <img src="{{asset('front/assets/img/logos/footer-logo1.pngs')}}" class="logo-two" alt="Logo">
                         </a>
 
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -398,7 +398,7 @@
                                 <div class="col-lg-5 col-md-4 p-0">
                                     <div class="room-card-img">
                                         <a href="room-details.html">
-                                            <img src="{{asset('front/assets/img/room/room-style-img1.jpg')}}" alt="Images">
+                                            <img src="{{asset('front/assets/img/room/room-style-img1.jpgs')}}" alt="Images">
                                         </a>
                                     </div>
                                 </div>
@@ -442,7 +442,7 @@
                                 <div class="col-lg-5 col-md-4 p-0">
                                     <div class="room-card-img">
                                         <a href="room-details.html">
-                                            <img src="{{asset('front/assets/img/room/room-style-img2.jpg')}}" alt="Images">
+                                            <img src="{{asset('front/assets/img/room/room-style-img2.jpgs')}}" alt="Images">
                                         </a>
                                     </div>
                                 </div>
@@ -486,7 +486,7 @@
                                 <div class="col-lg-5 col-md-4 p-0">
                                     <div class="room-card-img">
                                         <a href="room-details.html">
-                                            <img src="{{asset('front/assets/img/room/room-style-img3.jpg')}}" alt="Images">
+                                            <img src="{{asset('front/assets/img/room/room-style-img3.jpgs')}}" alt="Images">
                                         </a>
                                     </div>
                                 </div>
@@ -530,7 +530,7 @@
                                 <div class="col-lg-5 col-md-4 p-0">
                                     <div class="room-card-img">
                                         <a href="room-details.html">
-                                            <img src="{{asset('front/assets/img/room/room-style-img4.jpg')}}" alt="Images">
+                                            <img src="{{asset('front/assets/img/room/room-style-img4.jpgs')}}" alt="Images">
                                         </a>
                                     </div>
                                 </div>
@@ -592,7 +592,7 @@
 
                     <div class="col-lg-6">
                         <div class="book-img-2">
-                            <img src="{{asset('front/assets/img/book-img2.jpg')}}" alt="Images">
+                            <img src="{{asset('front/assets/img/book-img2.jpgs')}}" alt="Images">
                         </div>
                     </div>
                 </div>
@@ -679,7 +679,7 @@
                 <div class="team-slider-two owl-carousel owl-theme pt-45">
                     <div class="team-item">
                         <a href="team.html">
-                            <img src="{{asset('front/assets/img/team/team-img1.jpg')}}" alt="Images">
+                            <img src="{{asset('front/assets/img/team/team-img1.jpgs')}}" alt="Images">
                         </a>
                         <div class="content">
                             <h3><a href="team.html">Tom Shumate</a></h3>
@@ -703,7 +703,7 @@
 
                     <div class="team-item">
                         <a href="team.html">
-                            <img src="{{asset('front/assets/img/team/team-img2.jpg')}}" alt="Images">
+                            <img src="{{asset('front/assets/img/team/team-img2.jpgs')}}" alt="Images">
                         </a>
                         <div class="content">
                             <h3><a href="team.html">Carrie Horton</a></h3>
@@ -727,7 +727,7 @@
 
                     <div class="team-item">
                         <a href="team.html">
-                            <img src="{{asset('front/assets/img/team/team-img5.jpg')}}" alt="Images">
+                            <img src="{{asset('front/assets/img/team/team-img5.jpgs')}}" alt="Images">
                         </a>
                         <div class="content">
                             <h3><a href="team.html">Brian Orlando</a></h3>
@@ -751,7 +751,7 @@
 
                     <div class="team-item">
                         <a href="team.html">
-                            <img src="{{asset('front/assets/img/team/team-img4.jpg')}}" alt="Images">
+                            <img src="{{asset('front/assets/img/team/team-img4.jpgs')}}" alt="Images">
                         </a>
                         <div class="content">
                             <h3><a href="team.html">Michael Evens</a></h3>
@@ -787,7 +787,7 @@
                 <div class="row align-items-center pt-45">
                     <div class="col-lg-6 col-md-6">
                         <div class="testimonials-img-two">
-                            <img src="{{asset('front/assets/img/testimonials/testimonials-img5.jpg')}}" alt="Images">
+                            <img src="{{asset('front/assets/img/testimonials/testimonials-img5.jpgs')}}" alt="Images">
                         </div>
                     </div>
 
@@ -804,7 +804,7 @@
                                 </p>
                                 <ul>
                                     <li>
-                                        <img src="{{asset('front/assets/img/testimonials/testimonials-img1.jpg')}}" alt="Images">
+                                        <img src="{{asset('front/assets/img/testimonials/testimonials-img1.jpgs')}}" alt="Images">
                                         <h3>Mary Marden</h3>
                                         <span>New York City</span>
                                     </li>
@@ -822,7 +822,7 @@
                                 </p>
                                 <ul>
                                     <li>
-                                        <img src="{{asset('front/assets/img/testimonials/testimonials-img2.jpg')}}" alt="Images">
+                                        <img src="{{asset('front/assets/img/testimonials/testimonials-img2.jpgs')}}" alt="Images">
                                         <h3>Harriet Johnson</h3>
                                         <span>London City</span>
                                     </li>
@@ -915,7 +915,7 @@
 
                     <div class="col-lg-6">
                         <div class="faq-img-3">
-                            <img src="{{asset('front/assets/img/faq/faq-img3.jpg')}}" alt="Images">
+                            <img src="{{asset('front/assets/img/faq/faq-img3.jpgs')}}" alt="Images">
                         </div>
                     </div>
                 </div>
@@ -934,7 +934,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <a href="blog-details.html">
-                                <img src="{{asset('front/assets/img/blog/blog-item-img1.jpg')}}" alt="Images">
+                                <img src="{{asset('front/assets/img/blog/blog-item-img1.jpgs')}}" alt="Images">
                             </a>
                             <div class="content">
                                 <ul>
@@ -956,7 +956,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-item">
                             <a href="blog-details.html">
-                                <img src="{{asset('front/assets/img/blog/blog-item-img2.jpg')}}" alt="Images">
+                                <img src="{{asset('front/assets/img/blog/blog-item-img2.jpgs')}}" alt="Images">
                             </a>
                             <div class="content">
                                 <ul>
@@ -978,7 +978,7 @@
                     <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
                         <div class="blog-item">
                             <a href="blog-details.html">
-                                <img src="{{asset('front/assets/img/blog/blog-item-img3.jpg')}}" alt="Images">
+                                <img src="{{asset('front/assets/img/blog/blog-item-img3.jpgs')}}" alt="Images">
                             </a>
                             <div class="content">
                                 <ul>
@@ -1010,7 +1010,7 @@
                             <div class="footer-widget">
                                 <div class="footer-logo">
                                     <a href="index.html">
-                                        <img src="{{asset('front/assets/img/logos/footer-logo1.png')}}" alt="Images">
+                                        <img src="{{asset('front/assets/img/logos/footer-logo1.pngs')}}" alt="Images">
                                     </a>
                                 </div>
                                 <p>
@@ -1191,29 +1191,29 @@
 
 
         <!-- Jquery Min JS -->
-        <script src="{{asset('front/assets/js/jquery.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.min.jss')}}"></script>
         <!-- Bootstrap Bundle Min JS -->
-        <script src="{{asset('front/assets/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/bootstrap.bundle.min.jss')}}"></script>
         <!-- Magnific Popup Min JS -->
-        <script src="{{asset('front/assets/js/jquery.magnific-popup.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.magnific-popup.min.jss')}}"></script>
         <!-- Owl Carousel Min JS -->
-        <script src="{{asset('front/assets/js/owl.carousel.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/owl.carousel.min.jss')}}"></script>
         <!-- Nice Select Min JS -->
-        <script src="{{asset('front/assets/js/jquery.nice-select.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.nice-select.min.jss')}}"></script>
         <!-- Wow Min JS -->
-        <script src="{{asset('front/assets/js/wow.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/wow.min.jss')}}"></script>
         <!-- Jquery Ui JS -->
-        <script src="{{asset('front/assets/js/jquery-ui.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery-ui.jss')}}"></script>
         <!-- Meanmenu JS -->
-        <script src="{{asset('front/assets/js/meanmenu.js')}}"></script>
+        <script src="{{asset('front/assets/js/meanmenu.jss')}}"></script>
         <!-- Ajaxchimp Min JS -->
-        <script src="{{asset('front/assets/js/jquery.ajaxchimp.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/jquery.ajaxchimp.min.jss')}}"></script>
         <!-- Form Validator Min JS -->
-        <script src="{{asset('front/assets/js/form-validator.min.js')}}"></script>
+        <script src="{{asset('front/assets/js/form-validator.min.jss')}}"></script>
         <!-- Contact Form JS -->
-        <script src="{{asset('front/assets/js/contact-form-script.js')}}"></script>
+        <script src="{{asset('front/assets/js/contact-form-script.jss')}}"></script>
         <!-- Custom JS -->
-        <script src="{{asset('front/assets/js/custom.js')}}"></script>
+        <script src="{{asset('front/assets/js/custom.jss')}}"></script>
         
     </body>
 </html>
