@@ -15,6 +15,9 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,9 +27,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
 require __DIR__.'/auth.php';
@@ -39,12 +44,17 @@ Route::get('/admin/dashboard',[AdminController::class,'AdminDashboard'])->name('
 
 Route::get('/admin/logout',[AdminController::class,'AdminLogout'])->name('admin.logout');
 
+Route::get('/admin/profile',[AdminController::class,'AdminProfile'])->name('admin.profile');
 
+Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
+
+
+Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
 
 });
 
 
-
 Route::get('/admin/login',[AdminController::class,'AdminLogin'])->name('admin.login');
+
 
 

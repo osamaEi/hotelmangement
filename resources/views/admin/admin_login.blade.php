@@ -6,20 +6,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="{{asset(back/assets/images/favicon-32x32.png')}}" type="image/png" />
+	<link rel="icon" href="{{asset('back/assets/images/favicon-32x32.png')}}')}}" type="image/png" />
 	<!--plugins-->
-	<link href="{{asset(back/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
-	<link href="{{asset(back/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
-	<link href="{{asset(back/assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
+	<link href="{{asset('back/assets/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet" />
+	<link href="{{asset('back/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet" />
+	<link href="{{asset('back/assets/plugins/metismenu/css/metisMenu.min.css')}}" rel="stylesheet" />
 	<!-- loader-->
-	<link href="{{asset(back/assets/css/pace.min.css')}}" rel="stylesheet" />
-	<script src="{{asset(back/assets/js/pace.min.js')}}"></script>
+	<link href="{{asset('back/assets/css/pace.min.css')}}" rel="stylesheet" />
+	<script src="{{asset('back/assets/js/pace.min.js')}}"></script>
 	<!-- Bootstrap CSS -->
-	<link href="{{asset(back/assets/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{asset(back/assets/css/bootstrap-extended.css')}}" rel="stylesheet">
+	<link href="{{asset('back/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('back/assets/css/bootstrap-extended.css')}}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-	<link href="{{asset(back/assets/css/app.css')}}" rel="stylesheet">
-	<link href="{{asset(back/assets/css/icons.css')}}" rel="stylesheet">
+	<link href="{{asset('back/assets/css/app.css')}}" rel="stylesheet">
+	<link href="{{asset('back/assets/css/icons.css')}}" rel="stylesheet">
 	<title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
 </head>
 
@@ -34,7 +34,7 @@
 
                         <div class="card shadow-none bg-transparent shadow-none rounded-0 mb-0">
 							<div class="card-body">
-                                 <img src="{{asset(back/assets/images/login-images/login-cover.svg" class="img-fluid auth-img-cover-login" width="650" alt=""/>
+                                 <img src="{{asset('back/assets/images/login-images/login-cover.svg')}}" class="img-fluid auth-img-cover-login" width="650" alt=""/>
 							</div>
 						</div>
 						
@@ -45,22 +45,36 @@
 							<div class="card-body p-sm-5">
 								<div class="">
 									<div class="mb-3 text-center">
-										<img src="{{asset(back/assets/images/logo-icon.png" width="60" alt="">
+										<img src="{{asset('back/assets/images/logo-icon.png')}}" width="60" alt="">
 									</div>
 									<div class="text-center mb-4">
 										<h5 class="">Rocker Admin</h5>
 										<p class="mb-0">Please log in to your account</p>
 									</div>
 									<div class="form-body">
-										<form class="row g-3">
+
+		<form   class="row g-3" method="POST" action="{{ route('login') }}">
+        @csrf
+
+
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email</label>
-												<input type="email" class="form-control" id="inputEmailAddress" placeholder="jhon@example.com">
+												<input type="text" name="login" class="form-control" @error('login') isinvalid @enderror id="login" placeholder="jhon@example.com">
+												@error('login')
+
+												<span class="text-danger">
+													{{$message}}
+												</span>
+
+
+
+
+												@enderror
 											</div>
 											<div class="col-12">
 												<label for="inputChoosePassword" class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
+													<input type="password"  name="password" class="form-control border-end-0" id="password" value="12345678" placeholder="Enter Password"> <a href="javascript:;" class="input-group-text bg-transparent"><i class="bx bx-hide"></i></a>
 												</div>
 											</div>
 											<div class="col-md-6">
@@ -106,12 +120,12 @@
 	</div>
 	<!--end wrapper-->
 	<!-- Bootstrap JS -->
-	<script src="{{asset(back/assets/js/bootstrap.bundle.min.js')}}"></script>
+	<script src="{{asset('back/assets/js/bootstrap.bundle.min.js')}}"></script>
 	<!--plugins-->
-	<script src="{{asset(back/assets/js/jquery.min.js')}}"></script>
-	<script src="{{asset(back/assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
-	<script src="{{asset(back/assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
-	<script src="{{asset(back/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+	<script src="{{asset('back/assets/js/jquery.min.js')}}"></script>
+	<script src="{{asset('back/assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
+	<script src="{{asset('back/assets/plugins/metismenu/js/metisMenu.min.js')}}"></script>
+	<script src="{{asset('back/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
 	<!--Password show & hide js -->
 	<script>
 		$(document).ready(function () {
@@ -130,7 +144,7 @@
 		});
 	</script>
 	<!--app JS-->
-	<script src="{{asset(back/assets/js/app.js')}}"></script>
+	<script src="{{asset('back/assets/js/app.js')}}"></script>
 </body>
 
 </html>
