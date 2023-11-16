@@ -62,8 +62,26 @@
 							</div>
     <div class="col-lg-8">
         <div class="card">
+            
+    @if(\Session::has('error'))
+<div class="alert alert-danger">{{
 
-            <form action="{{ route('admin.profile.store') }}" method="post" enctype="multipart/form-data">
+    \Session::get('error')
+}}</div>  
+{{\Session::forget('error')}}
+
+@endif 
+
+@if (\Session::has('success'))
+<div class="alert alert-success">{{
+
+\Session::get('success')
+}}</div>  
+{{\Session::forget('success')}}
+
+@endif
+
+            <form action="{{ route('admin.password.update') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
             <div class="card-body">

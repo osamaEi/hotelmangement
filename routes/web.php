@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 
@@ -18,9 +19,12 @@ use App\Http\Controllers\ProfileController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+  //  return view('welcome');
+//});
+
+Route::get('/', [UserController::class, 'index'])->name('user.index');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -50,6 +54,8 @@ Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'
 
 
 Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
+
+Route::post('/admin/password/update', [AdminController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
 
 });
 
