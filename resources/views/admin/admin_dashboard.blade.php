@@ -26,6 +26,10 @@
 	<link rel="stylesheet" href="{{asset('back/assets/css/dark-theme.css')}}"/>
 	<link rel="stylesheet" href="{{asset('back/assets/css/semi-dark.css')}}"/>
 	<link rel="stylesheet" href="{{asset('back/assets/css/header-colors.css')}}"/>
+
+	<!-- dataTables CSS -->
+	<link href="{{asset('back/assets/plugins/datatable/css/dataTables.bootstrap5.min.css')}}" rel="stylesheet" />	
+   <!-- dataTables CSS -->
 	<title>Rocker - Bootstrap 5 Admin Dashboard Template</title>
 </head>
 
@@ -75,7 +79,16 @@
 		<!--Start Back To Top Button-->
 		  <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 		<!--End Back To Top Button-->
-	
+	<!--datatable JS-->
+<script src="{{asset('back/assets/plugins/datatable/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('back/assets/plugins/datatable/js/dataTables.bootstrap5.min.js')}}"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		  } );
+	</script>
+<!--datatable JS-->
+
 		@include('admin.body.footer')
 
 </html>
