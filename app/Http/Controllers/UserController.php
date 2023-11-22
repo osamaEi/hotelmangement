@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Jobs\SlowJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,6 +11,10 @@ class UserController extends Controller
 {
     
     public function index() {
+
+        SlowJob::dispatch();
+
+
 
         return view('frontend.index');
 

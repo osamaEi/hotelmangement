@@ -1,10 +1,13 @@
 <?php
 
+use App\Jobs\SlowJob;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\backend\RoomController;
 use App\Http\Controllers\Backend\TeamController;
+use App\Http\Controllers\Backend\RoomTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +23,12 @@ use App\Http\Controllers\Backend\TeamController;
 
 
 
-//Route::get('/', function () {
-  //  return view('welcome');
-//});
+Route::get('/', function () {
+sleep(5);
+  return view('frontend.index');
+});
 
-Route::get('/', [UserController::class, 'index'])->name('user.index');
+//Route::get('/', [UserController::class, 'index'])->name('user.index');
 
 
 Route::get('/dashboard', function () {
@@ -78,7 +82,39 @@ Route::middleware(['auth','roles:admin'])->group(function(){
      Route::get('/delete/team/{id}', 'DeleteTeam')->name('delete.team');
  
  });
+
+
+   /// Book Area All Route 
+   Route::controller(TeamController::class)->group(function(){
+
+    Route::get('/book/area', 'BookArea')->name('book.area');
+    Route::post('/book/area/update', 'BookAreaUpdate')->name('book.area.update');
+
+
+});
+
  
  
  }); // End Admin Group Middleware 
+
+
+
+ Route::controller(RoomTypeController::class)->group(function(){
+
+  Route::get('/room/type/list', 'RoomTypeList')->name('room.type.list');
+  Route::get('/add/room/type', 'AddRoomType')->name('add.room.type');
+  Route::post('/room/type/store', 'RoomTypeStore')->name('room.type.store'); 
+});
+
+
+Route::controller(RoomController::class)->group(function(){
+
+  Route::get('/edit/room/{id}', 'EditRoom')->name('edit.room');
+
+  Route::post('/update/room/{id}', 'UpdateRoom')->name('update.room');
+  
+});
+
+
+
 

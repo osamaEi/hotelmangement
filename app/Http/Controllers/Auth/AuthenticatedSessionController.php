@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Jobs\SlowJob;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -24,38 +25,41 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
-    {
-        $request->authenticate();
 
-        $request->session()->regenerate();
+public function store(LoginRequest $request): RedirectResponse
+{
+    $request->authenticate();
 
-        $id = Auth::user()->id;
-        $profileData = User::find($id);
-        $username = $profileData->name;
+    $request->session()->regenerate();
 
-        $notification = array(
-            'message' => 'User '.$username.' Login Successfully',
-            'alert-type' => 'info'
-        );
+    $id = Auth::user()->id;
+    $profileData = User::find($id);
+    $username = $profileData->name;
 
+    $notification = [
+        'message' => 'User ' . $username . ' Login Successfully',
+        'alert-type' => 'info'
+    ];
 
+    $url = '';
 
-        $url='';
+    if ($request->user()->role === 'admin') {
+        $url = '/admin/dashboard';
+    } elseif ($request->user()->role === 'user') {
+        $url = '/dashboard';
+    }
 
-        if($request->user()->role === 'admin') {
-
-            $url = '/admin/dashboard';
-
-        } elseif($request->user()->role === 'user'){
-
-
-        $url='/dashboard';
-
-        }
+    // Check if $url is empty or not before dispatching SlowJob
+    if (!empty($url)) {
 
         return redirect()->intended($url)->with($notification);
+    } else {
+        // Handle the case where $url is empty
+        // Redirect to a default page or handle accordingly
+        return redirect('/')->with('error', 'Invalid URL');
     }
+}
+ 
 
     /**
      * Destroy an authenticated session.
