@@ -64,11 +64,20 @@
             <label for="input3" class="form-label">Main Image </label>
             <input type="file" name="image" class="form-control" id="image" >
 
-<img id="showImage" src="{{ (!empty($editData->image)) ? url('upload/roomimg/'.$editData->image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60"> 
-</div>
+            <img id="showImage" src="{{ (!empty($editData->image)) ? url('upload/roomimg/'.$editData->image) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="70" height="50"></div>
         <div class="col-md-6">
             <label for="input4" class="form-label">Gallery Image </label>
             <input type="file" name="multi_img[]" class="form-control" multiple id="multiImg" accept="image/jpeg, image/jpg, image/gif, image/png" >
+
+            @foreach ($multiimgs as $item)
+
+            <img src="{{ (!empty($item->multi_img)) ? url('upload/roomimg/multi_img/'.$item->multi_img) : url('upload/no_image.jpg') }}" alt="Admin" class="bg-primary" width="60"> 
+
+              <a href="{{ route('multi.image.delete',$item->id) }}"><i class="lni lni-close"></i> </a>  
+
+            @endforeach
+
+
 
             <div class="row" id="preview_img"></div>
 </div>
@@ -97,8 +106,8 @@
             <label for="input7" class="form-label">Room View </label>
             <select name="view" id="input7" class="form-select">
                 <option selected="">Choose...</option>
-                <option value="Sea View">Sea View </option>
-                <option value="Hill View">Hill View </option>
+                <option value="Sea View" {{ $editData->view == 'Sea View'?'selected':''}}>Sea View </option>
+                <option value="Hill View" {{ $editData->view == 'Hill View'?'selected':''}} >Hill View </option>
 
             </select>
         </div>
@@ -107,9 +116,9 @@
             <label for="input7" class="form-label">Bed Style</label>
             <select name="bed_style" id="input7" class="form-select">
                 <option selected="">Choose...</option>
-                <option value="Queen Bed"> Queen Bed </option>
-                <option value="Twin Bed">Twin Bed </option>
-                <option value="King Bed">King Bed </option>
+                <option value="Queen Bed" {{ $editData->bed_style == 'Queen Bed'?'selected':''}}> Queen Bed </option>
+                <option value="Twin Bed" {{ $editData->bed_style == 'Twin Bed'?'selected':''}}>Twin Bed </option>
+                <option value="King Bed" {{ $editData->bed_style == 'King Bed'?'selected':''}}>King Bed </option>
             </select>
         </div>
 
@@ -119,11 +128,12 @@
         </div>
         
         <label for="input11" class="form-label"> Description </label>
-            <textarea name="description" class="form-control" id="myeditorinstance" >{!! $editData->short_desc !!}</textarea>
+            <textarea name="description" class="form-control" id="myeditorinstance" >{!! $editData->description !!}</textarea>
         </div>
 
 
 
+      
         <div class="row mt-2">
             <div class="col-md-12 mb-3">
                @forelse ($basic_facility as $item)
@@ -135,46 +145,46 @@
                               <option value="">Select Facility</option>
                               <option value="Complimentary Breakfast" {{$item->facility_name == 'Complimentary Breakfast'?'selected':''}}>Complimentary Breakfast</option>
              <option value="32/42 inch LED TV"  {{$item->facility_name == 'Complimentary Breakfast'?'selected':''}}> 32/42 inch LED TV</option>
-
+           
             <option value="Smoke alarms"  {{$item->facility_name == 'Smoke alarms'?'selected':''}}>Smoke alarms</option>
-
+           
             <option value="Minibar" {{$item->facility_name == 'Complimentary Breakfast'?'selected':''}}> Minibar</option>
-
+           
             <option value="Work Desk"  {{$item->facility_name == 'Work Desk'?'selected':''}}>Work Desk</option>
-
+           
             <option value="Free Wi-Fi" {{$item->facility_name == 'Free Wi-Fi'?'selected':''}}>Free Wi-Fi</option>
-
+           
             <option value="Safety box" {{$item->facility_name == 'Safety box'?'selected':''}} >Safety box</option>
-
+           
             <option value="Rain Shower" {{$item->facility_name == 'Rain Shower'?'selected':''}} >Rain Shower</option>
-
+           
             <option value="Slippers" {{$item->facility_name == 'Slippers'?'selected':''}} >Slippers</option>
-
+           
             <option value="Hair dryer" {{$item->facility_name == 'Hair dryer'?'selected':''}} >Hair dryer</option>
-
+           
             <option value="Wake-up service"  {{$item->facility_name == 'Wake-up service'?'selected':''}}>Wake-up service</option>
-
+           
             <option value="Laundry & Dry Cleaning" {{$item->facility_name == 'Laundry & Dry Cleaning'?'selected':''}} >Laundry & Dry Cleaning</option>
-
+            
             <option value="Electronic door lock"  {{$item->facility_name == 'Electronic door lock'?'selected':''}}>Electronic door lock</option> 
                         </select>
                      </div>
                      <div class="col-md-4">
                         <div class="form-group" style="padding-top: 30px;">
-                              <a class="btn btn-success addeventmore"><i class="fa fa-plus-circle"></i></a>
-                              <span class="btn btn-danger btn-sm removeeventmore"><i class="fa fa-minus-circle"></i></span>
+                              <a class="btn btn-success addeventmore"><i class="lni lni-circle-plus"></i></a>
+                              <span class="btn btn-danger btn-sm removeeventmore"><i class="lni lni-circle-minus"></i></span>
                         </div>
                      </div>
                   </div>
                </div>
-
+           
                @empty
-
+           
                     <div class="basic_facility_section_remove" id="basic_facility_section_remove">
                         <div class="row add_item">
                             <div class="col-md-6">
-                                <label for="facility_name" class="form-label">Room Facilities </label>
-                                <select name="facility_name[]" id="basic_facility_name" class="form-control">
+                                <label for="basic_facility_name" class="form-label">Room Facilities </label>
+   <select name="facility_name[]" id="basic_facility_name" class="form-control">
             <option value="">Select Facility</option>
             <option value="Complimentary Breakfast">Complimentary Breakfast</option>
             <option value="32/42 inch LED TV" > 32/42 inch LED TV</option>
@@ -194,14 +204,16 @@
                             <div class="col-md-6">
                                 <div class="form-group" style="padding-top: 30px;">
                     <a class="btn btn-success addeventmore"><i class="lni lni-circle-plus"></i></a>
-
+           
                    <span class="btn btn-danger removeeventmore"><i class="lni lni-circle-minus"></i></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+           
                @endforelse
+           
+           
 
 
 
@@ -250,7 +262,72 @@
 
 
             <div class="tab-pane fade" id="primaryprofile" role="tabpanel">
-                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+
+            <div class="card">
+                    <div class="card-body">
+                    <a class="card-title btn btn-primary float-right" onclick="addRoomNo()" id="addRoomNo" >                            <i class="lni lni-plus">Add New</i>
+                        </a>
+        <div class="roomnoHide" id="roomnoHide">
+        <form action="{{ route('store.room.no',$editData->id) }}" method="post">
+                @csrf
+
+                <input type="hidden" name="room_type_id" value="{{ $editData->roomtype_id }}" >
+                <div class="row">
+                <div class="col-md-4">
+                    <label for="input2" class="form-label">Room No </label>
+                    <input type="text" name="room_no" class="form-control" id="input2" >
+                </div>
+
+                <div class="col-md-4">
+                    <label for="input7" class="form-label">Status </label>
+                    <select name="status" id="input7" class="form-select">
+                        <option selected="">Select Status...</option>
+                        <option value="Active">Active </option>
+                        <option value="Inactive">Inactive  </option>
+
+                    </select>
+                </div> 
+
+                <div class="col-md-4">
+
+                    <button type="submit" class="btn btn-success" style="margin-top: 28px;">Save</button>
+                    </div> 
+            </div> 
+            </form> 
+        </div>
+
+
+        <table class="table mb-0 table-striped" id="roomview">
+            <thead>
+                <tr>
+                    <th scope="col">Room Number</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th> 
+                </tr>
+            </thead>
+            <tbody>
+            @foreach ($allroomNo as $item) 
+
+<tr> 
+    <td>{{ $item->room_no }}</td>
+    <td>{{ $item->status }}</td>
+    <td>
+<a href=" " class="btn btn-warning px-3 radius-30"> Edit</a>
+<a href=" " class="btn btn-danger px-3 radius-30" id="delete"> Delete</a>  
+
+    </td>
+</tr>
+@endforeach
+
+            </tbody>
+        </table>
+
+                    </div>
+</div>
+
+
+
+
             </div>
 
 
@@ -313,13 +390,14 @@
     });
  </script>
 
+<!--========== Start of add Basic Plan Facilities ==============-->
 <div style="visibility: hidden">
     <div class="whole_extra_item_add" id="whole_extra_item_add">
        <div class="basic_facility_section_remove" id="basic_facility_section_remove">
           <div class="container mt-2">
              <div class="row">
                 <div class="form-group col-md-6">
-                   <label for="facility_name">Room Facilities</label>
+                   <label for="basic_facility_name">Room Facilities</label>
                    <select name="facility_name[]" id="basic_facility_name" class="form-control">
                          <option value="">Select Facility</option>
   <option value="Complimentary Breakfast">Complimentary Breakfast</option>
@@ -346,7 +424,7 @@
        </div>
     </div>
  </div>
-
+ 
  <script type="text/javascript">
     $(document).ready(function(){
        var counter = 0;
@@ -363,6 +441,16 @@
  </script>
  <!--========== End of Basic Plan Facilities ==============-->
 
+
+ <script>
+        $('#roomnoHide').hide();
+        $('#roomview').show();
+        function addRoomNo(){
+            $('#roomnoHide').show();
+            $('#roomview').hide();
+            $('#addRoomNo').hide();
+        }
+    </script>
 
 
 
