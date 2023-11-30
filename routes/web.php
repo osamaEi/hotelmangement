@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\backend\RoomController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\RoomTypeController;
+use App\Http\Controllers\Frontend\FrontendRoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,8 +117,22 @@ Route::controller(RoomController::class)->group(function(){
   Route::get('/multi/image/delete/{id}', 'MultiImageDelete')->name('multi.image.delete');
 
   Route::post('/store/room/no/{id}', 'StoreRoomNumber')->name('store.room.no');
+
+  Route::get('/edit/roomno/{id}', 'EditRoomNumber')->name('edit.roomno');
+  Route::post('/update/roomno/{id}', 'UpdateRoomNumber')->name('update.roomno');
+  Route::get('/delete/roomno/{id}', 'DeleteRoomNumber')->name('delete.roomno');
   
 });
+
+Route::controller(FrontendRoomController::class)->group(function(){
+
+  Route::get('/rooms', 'AllFrontendRoomList')->name('froom.all');
+  Route::get('/room/details/{id}', 'RoomDetailsPage');
+
+
+});
+
+
 
 
 
